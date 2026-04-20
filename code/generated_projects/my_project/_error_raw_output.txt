@@ -1,0 +1,198 @@
+```json
+{
+    "files": {
+        "main.py": "
+import sys
+
+class Calculator:
+    """
+    A simple calculator class with methods for basic arithmetic operations.
+    """
+
+    def __init__(self):
+        """
+        Initializes the Calculator class.
+        """
+        pass
+
+    def add(self, num1: float, num2: float) -> float:
+        """
+        Returns the sum of two numbers.
+
+        Args:
+            num1 (float): The first number.
+            num2 (float): The second number.
+
+        Returns:
+            float: The sum of num1 and num2.
+        """
+        return num1 + num2
+
+    def subtract(self, num1: float, num2: float) -> float:
+        """
+        Returns the difference of two numbers.
+
+        Args:
+            num1 (float): The first number.
+            num2 (float): The second number.
+
+        Returns:
+            float: The difference of num1 and num2.
+        """
+        return num1 - num2
+
+    def multiply(self, num1: float, num2: float) -> float:
+        """
+        Returns the product of two numbers.
+
+        Args:
+            num1 (float): The first number.
+            num2 (float): The second number.
+
+        Returns:
+            float: The product of num1 and num2.
+        """
+        return num1 * num2
+
+    def divide(self, num1: float, num2: float) -> float:
+        """
+        Returns the quotient of two numbers, handling division by zero.
+
+        Args:
+            num1 (float): The first number.
+            num2 (float): The second number.
+
+        Returns:
+            float: The quotient of num1 and num2.
+
+        Raises:
+            ZeroDivisionError: If num2 is zero.
+        """
+        if num2 == 0:
+            raise ZeroDivisionError('Cannot divide by zero')
+        return num1 / num2
+
+    def run(self):
+        """
+        Starts the command-line interface, prompting the user for input and displaying results.
+        """
+        while True:
+            try:
+                print('\\n1. Addition')
+                print('2. Subtraction')
+                print('3. Multiplication')
+                print('4. Division')
+                print('5. Exit')
+                choice = input('Enter your choice (1/2/3/4/5): ')
+
+                if choice == '5':
+                    break
+
+                if choice not in ['1', '2', '3', '4']:
+                    print('Invalid choice. Please choose a valid operation.')
+                    continue
+
+                num1 = float(input('Enter the first number: '))
+                num2 = float(input('Enter the second number: '))
+
+                if choice == '1':
+                    print(f'{num1} + {num2} = {self.add(num1, num2)}')
+                elif choice == '2':
+                    print(f'{num1} - {num2} = {self.subtract(num1, num2)}')
+                elif choice == '3':
+                    print(f'{num1} * {num2} = {self.multiply(num1, num2)}')
+                elif choice == '4':
+                    try:
+                        print(f'{num1} / {num2} = {self.divide(num1, num2)}')
+                    except ZeroDivisionError as e:
+                        print(str(e))
+
+            except ValueError:
+                print('Invalid input. Please enter a valid number.')
+            except KeyboardInterrupt:
+                print('\\nExiting the calculator. Goodbye!')
+                sys.exit(0)
+
+
+def get_user_input() -> tuple:
+    """
+    Prompts the user for two numbers and an operation, returning the input as a tuple.
+
+    Returns:
+        tuple: A tuple containing the user's input.
+    """
+    # This function is not used in the current implementation
+    pass
+
+
+def validate_input(input_tuple: tuple) -> bool:
+    """
+    Checks if the input is valid (numbers and operation), returning a boolean.
+
+    Args:
+        input_tuple (tuple): A tuple containing the user's input.
+
+    Returns:
+        bool: True if the input is valid, False otherwise.
+    """
+    # This function is not used in the current implementation
+    pass
+
+
+if __name__ == '__main__':
+    calculator = Calculator()
+    calculator.run()
+        ",
+        "tests/test_calculator.py": "
+import unittest
+from main import Calculator
+
+class TestCalculator(unittest.TestCase):
+    """
+    A test class for the Calculator class.
+    """
+
+    def test_add(self):
+        """
+        Tests the add method with various inputs.
+        """
+        calculator = Calculator()
+        self.assertEqual(calculator.add(10, 5), 15)
+        self.assertEqual(calculator.add(-10, 5), -5)
+        self.assertEqual(calculator.add(-10, -5), -15)
+
+    def test_subtract(self):
+        """
+        Tests the subtract method with various inputs.
+        """
+        calculator = Calculator()
+        self.assertEqual(calculator.subtract(10, 5), 5)
+        self.assertEqual(calculator.subtract(-10, 5), -15)
+        self.assertEqual(calculator.subtract(-10, -5), -5)
+
+    def test_multiply(self):
+        """
+        Tests the multiply method with various inputs.
+        """
+        calculator = Calculator()
+        self.assertEqual(calculator.multiply(10, 5), 50)
+        self.assertEqual(calculator.multiply(-10, 5), -50)
+        self.assertEqual(calculator.multiply(-10, -5), 50)
+
+    def test_divide(self):
+        """
+        Tests the divide method with various inputs, including division by zero.
+        """
+        calculator = Calculator()
+        self.assertEqual(calculator.divide(10, 2), 5)
+        self.assertEqual(calculator.divide(-10, 2), -5)
+        self.assertEqual(calculator.divide(-10, -2), 5)
+        with self.assertRaises(ZeroDivisionError):
+            calculator.divide(10, 0)
+
+if __name__ == '__main__':
+    unittest.main()
+        "
+    }
+}
+```

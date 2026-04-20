@@ -1,0 +1,9 @@
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 1rem;
+    }
+    .about-me, .skills, .contact {
+        padding: 1rem;
+    }
+}

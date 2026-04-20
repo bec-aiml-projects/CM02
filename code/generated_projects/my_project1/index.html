@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dark-theme.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>John Doe</h1>
+        <h2>Software Developer</h2>
+    </header>
+    <section class="about-me">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </section>
+    <section class="skills">
+        <h2>Skills</h2>
+        <div class="progress-bar">
+            <label for="html">HTML</label>
+            <progress id="html" value="80" max="100"></progress>
+        </div>
+        <div class="progress-bar">
+            <label for="css">CSS</label>
+            <progress id="css" value="90" max="100"></progress>
+        </div>
+        <div class="progress-bar">
+            <label for="javascript">JavaScript</label>
+            <progress id="javascript" value="70" max="100"></progress>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/form-handler.js"></script>
+    <script src="scripts/progress-bars.js"></script>
+</body>
+</html>

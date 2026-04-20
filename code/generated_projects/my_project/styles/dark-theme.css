@@ -1,0 +1,30 @@
+/* Dark Theme Styles */
+:root {
+    --primary-color: #3b3f54;
+    --secondary-color: #5c5f66;
+    --background-color: #2f2f2f;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* About Me Section */
+.about-me {
+    background-color: var(--background-color);
+}
+
+/* Skills Section */
+.skills {
+    background-color: var(--background-color);
+}

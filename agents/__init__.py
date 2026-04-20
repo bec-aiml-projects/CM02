@@ -1,3 +1,0 @@
-"""
-Coder Buddy - Agents Package
-"""

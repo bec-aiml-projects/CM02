@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Coder Buddy 🤖
 
 **Your Elite AI Development Team** — Describe what you want to build, and our multi-agent pipeline will plan, architect, code, and review it for you.
@@ -152,3 +153,6 @@ Special instructions: [Error handling, comments, etc.]
 ## 📄 License
 
 MIT License — Build whatever you want with Coder Buddy!
+=======
+# CM02
+>>>>>>> 93197eb90c3b32393af7011c7cfbfcdf3df242bf
